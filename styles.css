@@ -1,0 +1,647 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    /* Soft sky gradient background, common in Ghibli films */
+    background: linear-gradient(to bottom, #c9dce4 0%, #e8f1f8 100%);
+    color: #5d6357;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e3d5c3 0%, #f3e7d6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.8s ease;
+}
+
+.totoro-loader {
+    width: 80px;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%235a7247" stroke-width="8" stroke-dasharray="60 30" stroke-linecap="round"><animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="1.5s" repeatCount="indefinite"/></circle></svg>');
+    background-size: contain;
+    opacity: 0.8;
+}
+
+/* Ghibli-inspired floating elements */
+.floating-elements {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.leaf {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="%2386a866" d="M10,0 C15,5 20,10 10,20 C0,10 5,5 10,0z"/></svg>') no-repeat;
+    opacity: 0.5;
+    animation: float 15s infinite linear;
+}
+
+.leaf1 {
+    top: 20%;
+    left: 10%;
+    animation-duration: 17s;
+    animation-delay: 1s;
+}
+
+.leaf2 {
+    top: 50%;
+    right: 15%;
+    animation-duration: 25s;
+    animation-delay: 3s;
+}
+
+.leaf3 {
+    bottom: 30%;
+    left: 30%;
+    animation-duration: 20s;
+    animation-delay: 7s;
+}
+
+.dust {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 20s infinite linear;
+}
+
+.dust1 { top: 10%; left: 40%; animation-duration: 22s; }
+.dust2 { top: 30%; right: 30%; animation-duration: 18s; }
+.dust3 { bottom: 40%; left: 20%; animation-duration: 25s; }
+.dust4 { bottom: 20%; right: 10%; animation-duration: 19s; }
+.dust5 { top: 50%; left: 50%; animation-duration: 23s; }
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translateY(-100px) rotate(90deg) translateX(50px);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-200px) rotate(180deg) translateX(0px);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(-300px) rotate(270deg) translateX(-50px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-400px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slideshow-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+}
+
+.active {
+    display: block;
+}
+
+.slide-content {
+    background-color: rgba(255, 255, 255, 0.85);
+    max-width: 1000px;
+    height: calc(100vh - 100px);
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(104, 125, 98, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    /* Soft watercolor texture overlay */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+    /* Paper-like border */
+    border: 1px solid rgba(166, 190, 169, 0.2);
+}
+
+/* Ghibli-inspired frame and dividers */
+.ghibli-frame {
+    border: 8px solid transparent;
+    border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="%23a6bea9" stroke-width="8" stroke-dasharray="2 2" stroke-linecap="round"/></svg>');
+    border-image-slice: 8;
+    border-image-repeat: round;
+    padding: 10px;
+}
+
+.ghibli-border {
+    border: 12px solid transparent;
+    border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="%23a6bea9" stroke-width="8" stroke-dasharray="2 2" stroke-linecap="round"/></svg>');
+    border-image-slice: 12;
+    border-image-repeat: round;
+    padding: 30px;
+    text-align: center;
+}
+
+.ghibli-divider {
+    height: 10px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M0,5 C20,0 30,10 50,5 C70,0 80,10 100,5" fill="none" stroke="%23a6bea9" stroke-width="2" stroke-dasharray="1 3" /></svg>');
+    background-repeat: repeat-x;
+    margin: 20px auto;
+    opacity: 0.7;
+}
+
+/* Title Slide */
+.title-slide, .final-slide {
+    /* Soft dawn sky gradient, reminiscent of many Ghibli film scenes */
+    background: linear-gradient(135deg, #e3d5c3 0%, #f3e7d6 100%);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-slide h1, .final-slide h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+    color: #5a7247;
+    text-shadow: 1px 1px 2px rgba(90, 114, 71, 0.2);
+}
+
+.title-slide h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #7d8c69;
+    font-weight: 300;
+}
+
+.instructions {
+    margin-top: 20px;
+    font-style: italic;
+    color: #a0a78b;
+    font-size: 0.9rem;
+}
+
+/* Gift Container - New Layout */
+.gift-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+}
+
+/* Gift Image - Updated for side-by-side layout */
+.gift-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    /* Soft glow like Ghibli lighting */
+    box-shadow: 0 5px 15px rgba(90, 114, 71, 0.2), 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+/* Gift Description - Updated for side-by-side layout */
+.gift-description {
+    width: 55%;
+    padding-right: 20px;
+}
+
+.gift-description h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.2rem;
+    color: #5a7247;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.gift-date {
+    font-style: italic;
+    color: #a0a78b;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.gift-story {
+    font-size: 1.1rem;
+    color: #5d6357;
+    line-height: 1.8;
+}
+
+.gift-story p {
+    margin-bottom: 15px;
+}
+
+/* Final Slide */
+.final-slide h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.final-slide p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #7d8c69;
+}
+
+/* Navigation Controls */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #5a7247;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: 0.6s ease;
+    border-radius: 50%;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 8px rgba(90, 114, 71, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.next {
+    right: 15px;
+}
+
+.prev {
+    left: 15px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(90, 114, 71, 0.8);
+    color: white;
+}
+
+/* Navigation Dots */
+.dots-container {
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(160, 167, 139, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.dot.active, .dot:hover {
+    background-color: #5a7247;
+}
+
+/* Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    .slide-content {
+        padding: 40px 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .slide-content {
+        padding: 20px;
+    }
+    
+    .title-slide h1 {
+        font-size: 2.2rem;
+    }
+    
+    .gift-description h2 {
+        font-size: 1.8rem;
+    }
+    
+    .prev, .next {
+        padding: 10px;
+        margin-top: -20px;
+    }
+    
+    .ghibli-border {
+        padding: 15px;
+    }
+    
+    /* Stack layout on mobile */
+    .gift-container {
+        flex-direction: column-reverse;
+    }
+    
+    .gift-description, .gift-image {
+        width: 100%;
+        padding-right: 0;
+    }
+    
+    .gift-image {
+        margin-bottom: 20px;
+    }
+}
+/* Audio Player */
+.audio-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(90, 114, 71, 0.2);
+    z-index: 100;
+    border: 1px solid rgba(166, 190, 169, 0.3);
+    transition: all 0.3s ease;
+}
+
+.audio-player:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.music-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #5a7247;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.music-button:hover {
+    background-color: #7d8c69;
+    transform: scale(1.05);
+}
+
+.music-icon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.play-icon:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 12px solid white;
+    border-bottom: 8px solid transparent;
+    left: 3px;
+    top: 0;
+}
+
+.pause-icon:before, .pause-icon:after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 16px;
+    background-color: white;
+    top: 0;
+}
+
+.pause-icon:before {
+    left: 4px;
+}
+
+.pause-icon:after {
+    right: 4px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#volume-slider {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 4px;
+    background: #d6e1cd;
+    border-radius: 2px;
+    outline: none;
+    transition: opacity 0.2s;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #5a7247;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #5a7247;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.volume-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.volume-icon:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #5a7247;
+    clip-path: polygon(0 30%, 30% 30%, 60% 0, 60% 100%, 30% 70%, 0 70%);
+    left: 0;
+    top: 6px;
+}
+
+.volume-icon:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #5a7247;
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+    left: 8px;
+    top: 5px;
+}
+
+/* Adjust dots container to avoid overlap with audio player */
+.dots-container {
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: auto;
+    z-index: 50;
+}
+
+@media (max-width: 767px) {
+    .audio-player {
+        bottom: 15px;
+        left: 15px;
+        padding: 8px 12px;
+    }
+    
+    .music-button {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #volume-slider {
+        width: 60px;
+    }
+}
+/* Autumn Theme */
+.autumn-theme {
+    background: linear-gradient(135deg, #f5ecd9 0%, #e6cfab 100%);
+}
+
+.autumn-theme .gift-description h2 {
+    color: #b07d4c;
+}
+
+.autumn-theme .gift-date {
+    color: #c69b71;
+}
+
+.autumn-theme .gift-story {
+    color: #6c5234;
+}
+
+.autumn-frame {
+    border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="%23b07d4c" stroke-width="8" stroke-dasharray="2 2" stroke-linecap="round"/></svg>');
+    border-image-slice: 8;
+}
+
+/* Simplified button for Caesar slide */
+/* Super simple Caesar slide */
+.simple-cipher-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.simple-cipher-container h2 {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.5rem;
+    color: #5a7247;
+    margin-bottom: 10px;
+}
+
+.cipher-instructions {
+    font-size: 1.1rem;
+    color: #5d6357;
+    line-height: 1.6;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.encoded-message {
+    font-family: monospace;
+    font-size: 1.5rem;
+    padding: 15px;
+    background-color: rgba(90, 114, 71, 0.1);
+    border-radius: 8px;
+    margin: 30px auto;
+    color: #5a7247;
+    letter-spacing: 1px;
+    max-width: 500px;
+}
+
+.simple-button {
+    padding: 12px 30px;
+    background-color: #5a7247;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.simple-button:hover {
+    background-color: #7d8c69;
+    transform: scale(1.05);
+}
