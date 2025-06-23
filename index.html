@@ -1,331 +1,512 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gifts for Joselinᡣ𐭩</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <title>Rafi Madani - AI Engineer & NLP Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#0a0a0f',
+                        'dark-card': '#1a1a2e',
+                        'accent-blue': '#3b82f6',
+                        'accent-purple': '#8b5cf6',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    }
+                }
+            },
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            to { box-shadow: 0 0 30px rgba(139, 92, 246, 0.8); }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass {
+            background: rgba(26, 26, 46, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="totoro-loader"></div>
-    </div>
+<body class="font-inter bg-gradient-to-br from-slate-50 to-blue-50 dark:from-dark-bg dark:to-slate-900 text-gray-900 dark:text-white transition-all duration-500">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">Rafi Madani</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-accent-blue transition-colors">Home</a>
+                    <a href="#about" class="hover:text-accent-blue transition-colors">About</a>
+                    <a href="#projects" class="hover:text-accent-blue transition-colors">Projects</a>
+                    <a href="#cv" class="hover:text-accent-blue transition-colors">CV</a>
+                    <a href="#contact" class="hover:text-accent-blue transition-colors">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-lg glass hover:scale-110 transition-transform">
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg glass">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="hover:text-accent-blue transition-colors">Home</a>
+                    <a href="#about" class="hover:text-accent-blue transition-colors">About</a>
+                    <a href="#projects" class="hover:text-accent-blue transition-colors">Projects</a>
+                    <a href="#cv" class="hover:text-accent-blue transition-colors">CV</a>
+                    <a href="#contact" class="hover:text-accent-blue transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <!-- Ghibli-inspired floating elements -->
-    <div class="floating-elements">
-        <div class="leaf leaf1"></div>
-        <div class="leaf leaf2"></div>
-        <div class="leaf leaf3"></div>
-        <div class="dust dust1"></div>
-        <div class="dust dust2"></div>
-        <div class="dust dust3"></div>
-        <div class="dust dust4"></div>
-        <div class="dust dust5"></div>
-    </div>
-    
-    <div class="slideshow-container">
-        <!-- Title Slide -->
-        <div class="slide fade active">
-            <div class="slide-content title-slide">
-                <div class="ghibli-border">
-                    <h1>Special Gifts for Joselinᡣ𐭩</h1>
-                    <p class="subtitle">Please use laptop for better view and TURN UP the volume ☻</p>
-                    <div class="ghibli-divider"></div>
-                    <p class="instructions">Use the arrows or swipe to navigate</p>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="animate-float">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-text">Rafi Madani</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
+                    Aspiring AI Engineer · NLP & LLM Researcher · Backend Developer
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="px-8 py-4 bg-gradient-to-r from-accent-blue to-accent-purple text-white rounded-full hover:scale-105 transition-transform animate-glow">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="px-8 py-4 glass rounded-full hover:scale-105 transition-transform">
+                        Get In Touch
+                    </a>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Gift 1 -->
-        <div class="slide fade">
-            <div class="slide-content">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>Clay figure totoro</h2>
-                        <p class="gift-date">Bought on: Around feb i guess</p>
-                        <div class="gift-story">
-                            <p>Ini waktu itu tuh guee beli di jogja, di sekitar bulan februari mungkin(?), yang gue jalan sama iskandar dkk. Kek lagi beli eskrim gitu di gelato, trus ketemu artistic shop gitu lucu trus nyamperin deh buat beli in lo hadiah ultah.</p>
-                            <p>Kenapa ya beli ini? UGH mungkin karena mirip sama lo mukanya. Sama sama cute gitu HAHAHHA</p>
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Computer Science student at Universitas Indonesia, passionate about NLP, LLMs, and Generative AI. 
+                        I develop AI solutions using cutting-edge models like DeepSeek, LLaMA, Mistral, and Qwen with 
+                        advanced prompting strategies including zero-shot and few-shot learning.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Currently researching LLM-based content classification for my thesis work. I have a strong 
+                        foundation in Python, Django, and ML frameworks, with particular interest in RAG architectures, 
+                        VectorDBs, and agent-based systems.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 glass rounded-full text-sm">Python</span>
+                        <span class="px-4 py-2 glass rounded-full text-sm">Machine Learning</span>
+                        <span class="px-4 py-2 glass rounded-full text-sm">NLP</span>
+                        <span class="px-4 py-2 glass rounded-full text-sm">LLMs</span>
+                        <span class="px-4 py-2 glass rounded-full text-sm">Django</span>
+                        <span class="px-4 py-2 glass rounded-full text-sm">TensorFlow</span>
+                        <span class="px-4 py-2 glass rounded-full text-sm">Deep Learning</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="glass p-6 rounded-2xl">
+                        <h3 class="text-xl font-semibold mb-4">Education</h3>
+                        <div class="space-y-2">
+                            <p class="font-medium">Computer Science Bachelor</p>
+                            <p class="text-gray-600 dark:text-gray-300">Universitas Indonesia</p>
+                            <p class="text-sm text-gray-500">April 2021 - Present</p>
                         </div>
                     </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame">
-                            <img src="images/gift1.jpg" alt="Gift 1">
+                    <div class="glass p-6 rounded-2xl">
+                        <h3 class="text-xl font-semibold mb-4">Experience</h3>
+                        <div class="space-y-2">
+                            <p class="font-medium">Software Engineering Intern</p>
+                            <p class="text-gray-600 dark:text-gray-300">PT. PHAROS</p>
+                            <p class="text-sm text-gray-500">September 2024 - December 2024</p>
                         </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/rafimadani" target="_blank" class="p-3 glass rounded-full hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rafi-madani-320822218/" target="_blank" class="p-3 glass rounded-full hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:rafimadani78@gmail.com" class="p-3 glass rounded-full hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Gift 2 -->
-        <div class="slide fade">
-            <div class="slide-content">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>Shincan and San (mononoke princess)</h2>
-                        <p class="gift-date">Bought on: Around feb i guess</p>
-                        <div class="gift-story">
-                            <p>Ini tuh dibeli di tempat yang samaa kek clay figure sebelumnya. Gue pas beli clay figure nya kayak "ugh beli apalagi ya masa clay figure doang". Jadi deh beli 2 ini (ada 1 lagi sih sbnrnya)</p>
-                            <p>Shincan tuh gue beli karena shinchan nya kek gue gitu suka usil, trus temennya shincan kek elu jose KWKWKW.</p>
-                            <p>KEK ITU TUH KIRA KIRA REAKSI LO SETIAP GUE USILIN HAHAHHAH.</p>
-                           
-                        </div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Movie Recommendation App -->
+                <div class="glass p-6 rounded-2xl hover:scale-105 transition-transform group">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold">Movie Recommendation App</h3>
+                        <a href="#" class="p-2 glass rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame">
-                            <img src="images/image2.jpg" alt="Gift 2">
-                        </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Collaborative ML project for Nusantara Beta Studio. Built neural collaborative filtering model 
+                        with 82% confidence using PyTorch and deployed with Flask.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">PyTorch</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Flask</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">TF-IDF</span>
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-xs">TMDB API</span>
                     </div>
+                    <p class="text-sm text-gray-500">Company Collaboration • 2024</p>
                 </div>
-            </div>
-        </div>
 
-        <!-- Gift 2-1 -->
-        <div class="slide fade">
-            <div class="slide-content">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>Shincan and San (mononoke princess)</h2>
-                        <p class="gift-date">Bought on: Around feb i guess</p>
-                        <div class="gift-story">
-                            <p>
-                                Kalau San sendiri, dia karakter favorit gue di serial Ghibli. Gue suka karena dia <strong>gila-gilaan perjuangin apa yang dia anggap benar</strong>.
-                            </p>
-                            <p>
-                                Walaupun mungkin dia <em>close-minded</em>, tapi <strong>keberanian untuk memperjuangkan apa yang kita mau</strong> aja itu udah sangat keren menurut gue.
-                            </p>
-                            <p>
-                                Dan buat gue, itu bukan sekadar keren—<strong>itu menginspirasi</strong>.
-                            </p>
-                            <p>
-                                Gue harap lo juga bisa kayak San. Nggak harus sempurna, nggak harus selalu benar. Tapi punya keberanian buat memperjuangkan hal yang menurut lo penting. Punya tekad buat <em>tetap berdiri tegak</em> bahkan ketika semuanya rasanya berat.
-                            </p>
-                           
-                        </div>
+                <!-- Project 2: Thesis Research -->
+                <div class="glass p-6 rounded-2xl hover:scale-105 transition-transform group">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold">LLM Content Classification</h3>
+                        <a href="#" class="p-2 glass rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame">
-                            <img src="images/image2.jpg" alt="Gift 2-1">
-                        </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Undergraduate thesis comparing LLM performance in Indonesian content moderation using 
+                        state-of-the-art models with prompt-based classification techniques.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-xs">LLaMA 3.1</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">DeepSeek</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Qwen</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">Few-shot Learning</span>
                     </div>
+                    <p class="text-sm text-gray-500">Research • 2024</p>
                 </div>
-            </div>
-        </div>
 
-        <!-- Gift 4 -->
-        <div class="slide fade">
-            <div class="slide-content">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>Mirip Kaveh</h2>
-                        <p class="gift-date">Bought on: Around feb i guess</p>
-                        <div class="gift-story">
-                            <p>
-                               Nah kalau ini tuh, dibelinya di tempat yang sama juga kayaa sebelumnya.
-                            <p>
-                                Lo kan suka banget ya sama <em>kaveh</em>, trus gue cari cari di artistic shop nyaa. TAPI DIA GA JUAL YANG BAU BAU GENSHIN GITUU.
-                            </p>
-                            <p>
-                                Trus gue cari dong kaveh tuh kayak gmn sih di gugel bjir, trus gue cari aja deh yang pling mirip. Dapet deh karakter nih dari howl's moving castle.
-                            </p>
-                            <p>
-                                Rambutnya sama sama blonde :) , MMF YA GBISA NEMU KAVEH BENERANNN. But semoga ttp suka ya :(
-                            </p>
-                            
-                           
-                        </div>
+                <!-- Project 3: Hospital Logistics System -->
+                <div class="glass p-6 rounded-2xl hover:scale-105 transition-transform group">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold">RS UMMI Logistics System</h3>
+                        <a href="#" class="p-2 glass rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame">
-                            <img src="images/image3.jpg" alt="Gift 3">
-                        </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Led development of logistics management system for RS Ummi hospital. Served as Scrum Master 
+                        and Lead Backend Developer with 90%+ code coverage using TDD.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Django</span>
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">Supabase</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">Tailwind</span>
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-xs">TDD</span>
                     </div>
+                    <p class="text-sm text-gray-500">Team Lead • 2024</p>
                 </div>
-            </div>
-        </div>
-        <!-- Add more slides as needed -->
-         
-         <!-- Gift 3 -->
-         <div class="slide fade">
-            <div class="slide-content">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>KOPI</h2>
-                        <p class="gift-date">Bought on: Start of April</p>
-                        <div class="gift-story">
-                            <p>
-                               Nah kalau ini tuh, gue mikir kan "emm hadiah apa ya yang cocok buat pecinta kopi".
-                            <p>
-                                Berhubung lu pecandu kopi yah :), tapi loo kayaknya engga ada mesin penggiling kopi kan di rumah, jadi gmungkin gue beli in biji kopi
-                            </p>
-                            <p>
-                                Trus lo suka kopi yang manisss (payah bgt ngga dewasa hmph), jadii gue kepikiran buat beli in lo ituhh biar lo sekalian nyobaaa. Lemme knoww ya kalau sukaa/gasukaa
-                            </p>
-                            <p>BIAR GA GOOD DAY MULU KOPINYA （￣へ￣）</p>
-                            <p>Update note 15 Aprl : HRUSNYA RASANYA BEDA KOK SAMA YANG KALENG. Emhhh semoga suka yah 😭</p>
-                           
-                           
-                        </div>
-                    </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame">
-                            <img src="images/image4.jpg" alt="Gift 4">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Add more slides as needed -->
-        <div class="slide fade">
-            <div class="slide-content">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>stopkontak meong</h2>
-                        <p class="gift-date">Bought on: Start of April</p>
-                        <div class="gift-story">
-                            <p>
-                               Nah kalau ini tuh, gue kepikiran kan kendala kita kalo discord tuh lo hrus laptop di mejaa karena gada colokan di kasur, trus lo hrus sembari duduk 💀💀
-                            <p>
-                                Terbesit lah di sukma gue dan pikiran gue buat beli in stop kontak inii, tapii stop kontaknya harus lucuk gaboleh yang bisa di beli di abang2 🤔💭
-                            </p>
-                            <p>
-                                andd dapet dehh ini stop kontak meongg, kayaknyaa lo suka kucing dehh yagasihhh. Jadi gue beli in yang ada kucing kucingnya tapi stopkontak tehehehe.
-                            </p>
-                            <p><strong>semoga kalo kita mainn lo ga gampang pegel lgi yaaa ❤︎</strong></p>
-                            <p>ᕙ(  •̀ ᗜ •́  )ᕗ</p>
-                           
-                        </div>
+                <!-- Project 4: Sarcasm Detector -->
+                <div class="glass p-6 rounded-2xl hover:scale-105 transition-transform group">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold">Sarcasm Detector</h3>
+                        <a href="#" class="p-2 glass rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame">
-                            <img src="images/image5.jpg" alt="Gift 5">
-                        </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        NLP model for detecting sarcasm in news headlines with 80%+ validation accuracy. 
+                        Features automatic title generation and web deployment.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">NLP</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Flask</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">TensorFlow</span>
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-xs">Text Processing</span>
                     </div>
+                    <p class="text-sm text-gray-500">Personal Project • 2024</p>
                 </div>
-            </div>
-        </div>
 
-        <div class="slide fade">
-            <div class="slide-content">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>lavender aromatheraphy</h2>
-                        <p class="gift-date">Bought on: Start of April</p>
-                        <div class="gift-story">
-                            <p>
-                               Nah kalau ini tuh, gue aga miris dan khawatir yah dengan jam tidur lo ituh yang sangat random (⊙ _ ⊙ )
-                            </p>
-                            <p>
-                                andd lo kann engga mau ya pake obat tidur, jadi guee kepikiran apaa ya kira kiraa yang mungkin bisa bantu lu bobo but in a healthy way, tapi juga harus lucu looksnyaa ∘ ∘ ∘ ( °ヮ° ) ?
-                            </p>
-                            <p>
-                                I dunno apakah lo suka ngoleksi aromatheraphy atau ndaa, and i guess you'll love this one soalnya parfum lo tuh bunga-bunga an. Dan yang paling penting, <strong>lavender helps with sleep problem taukk 👍👍</strong>
-                            </p>
-                            
-                           
-                        </div>
+                <!-- Project 5: Bike Sharing Analysis -->
+                <div class="glass p-6 rounded-2xl hover:scale-105 transition-transform group">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold">Bike Sharing Analysis</h3>
+                        <a href="#" class="p-2 glass rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame">
-                            <img src="images/image6.jpg" alt="Gift 6">
-                        </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Data analysis project examining weather and seasonal effects on bike rental patterns. 
+                        Created interactive visualizations and deployed with Streamlit.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">Python</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Streamlit</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">Data Analysis</span>
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-xs">Visualization</span>
                     </div>
+                    <p class="text-sm text-gray-500">Dicoding • 2024</p>
                 </div>
-            </div>
-        </div>
 
-                <!-- New Slide with Different Colors -->
-        <div class="slide fade">
-            <div class="slide-content autumn-theme">
-                <div class="gift-container">
-                    <div class="gift-description">
-                        <h2>The End (?) </h2>
-                        <p class="gift-date">Written on: April 15</p>
-                        <div class="gift-story">
-                            <p>
-                                YEY, thats it. Itu adalah hadiah-hadiah nyah🎉🎉
-                            </p>
-                            <p>
-                                I hope you like it jose. I'm sorry kalau misalnyaa ada yang ternyata engga sesuai sama selera loo, atau mungkin ada barang yang udah lo punyakk.
-                            </p>
-                            <p>
-                                TAPI... I hope it suits you well, Jose. 
-                            </p>
-                            <p>
-                            I didn’t just pick random stuff, okay? I bought little pieces of “you” that I found while walking around (AWWWWW)
-                            </p>
-                        </div>
+                <!-- Project 6: Flight Delay Analysis -->
+                <div class="glass p-6 rounded-2xl hover:scale-105 transition-transform group">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold">Flight Delay Prediction</h3>
+                        <a href="#" class="p-2 glass rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="gift-image">
-                        <div class="ghibli-frame autumn-theme">
-                            <img src="images/memejoselin.jpg" alt="Special Message" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'300\' viewBox=\'0 0 300 300\'><rect width=\'300\' height=\'300\' fill=\'%23f9d9ca\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'20\' text-anchor=\'middle\' fill=\'%23d68e77\'>Add your favorite Ghibli image here</text></svg>'">
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        ML model predicting airplane ground time using MLP regressor. Achieved MSE of 64.867 
+                        and R² of 0.848 with comprehensive delay pattern analysis.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">Machine Learning</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">MLP</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">Regression</span>
+                        <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-xs">Data Science</span>
+                    </div>
+                    <p class="text-sm text-gray-500">University Project • 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Curriculum Vitae</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-8 rounded-2xl text-center">
+                    <div class="mb-8">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="text-2xl font-semibold mb-4">Download My CV</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Get a detailed overview of my education, experience, projects, and skills.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="./Cv-RafiMadani.pdf" download class="px-8 py-4 bg-gradient-to-r from-accent-blue to-accent-purple text-white rounded-full hover:scale-105 transition-transform">
+                            Download PDF
+                        </a>
+                        <a href="./Cv-RafiMadani.pdf" target="_blank" class="px-8 py-4 glass rounded-full hover:scale-105 transition-transform">
+                            View Online
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div class="mt-12 glass p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Certifications</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-accent-blue rounded-full"></div>
+                                <span>TOEFL ITP: 587</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-accent-blue rounded-full"></div>
+                                <span>TensorFlow Developer - DeepLearning.AI</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-accent-blue rounded-full"></div>
+                                <span>Machine Learning - Stanford University</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-accent-purple rounded-full"></div>
+                                <span>TensorFlow: Advanced Techniques</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-accent-purple rounded-full"></div>
+                                <span>TensorFlow: Data and Deployment</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-accent-purple rounded-full"></div>
+                                <span>Mathematics for ML and Data Science</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Caesar Cipher Quiz Slide (Simplified) -->
-        <!-- Simplest Caesar Cipher Slide -->
-<div class="slide fade">
-    <div class="slide-content cipher-theme">
-        <div class="simple-cipher-container">
-            <h2>Secret Message</h2>
-            <div class="ghibli-divider"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-8 rounded-2xl text-center">
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                        I'm always interested in discussing AI research, collaboration opportunities, 
+                        or innovative projects. Let's connect!
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <a href="mailto:rafimadani78@gmail.com" class="group">
+                            <div class="glass p-6 rounded-xl hover:scale-105 transition-transform">
+                                <svg class="w-8 h-8 mx-auto mb-4 text-accent-blue group-hover:text-accent-purple transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <h3 class="font-semibold mb-2">Email</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">rafimadani78@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rafi-madani-320822218/" target="_blank" class="group">
+                            <div class="glass p-6 rounded-xl hover:scale-105 transition-transform">
+                                <svg class="w-8 h-8 mx-auto mb-4 text-accent-blue group-hover:text-accent-purple transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                <h3 class="font-semibold mb-2">LinkedIn</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Connect with me</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/rafimadani" target="_blank" class="group">
+                            <div class="glass p-6 rounded-xl hover:scale-105 transition-transform">
+                                <svg class="w-8 h-8 mx-auto mb-4 text-accent-blue group-hover:text-accent-purple transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <h3 class="font-semibold mb-2">GitHub</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">View my code</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300">
+                © 2024 Rafi Madani. Built with passion for AI and innovation.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
             
-            <p class="cipher-instructions">Hi Jose 😁 Kalau di game ini istilahnya easter egg! Ini last gift dari gueh, ini link tiktok yang di encode pake caesar cipher (shift + 3). Decodee yaaa gampang kooo plss (pk gpt kalo payah 😋)! </p>
-            
-            <div class="encoded-message">
-                kwwsv://yw.wlnwrn.frp/CVuaifd6S/
-            </div>
-            
-            <button class="simple-button" onclick="changeSlide(1)">HARUS KE SOLVED DULU BARU BOLEH NEXT SLIDE ( ｡ •̀ ᴖ •́ ｡)</button>
-        </div>
-    </div>
-</div>
-        <!-- Final Slide -->
-        <!-- Final Slide with Background Image -->
-        <div class="slide fade">
-            <div class="slide-content final-slide-with-bg">
-                <div class="ghibli-border">
-                    <h2>With Love</h2>
-                    <div class="ghibli-divider"></div>
-                    <p>I hope these make you smile, Jose.</p>
-                </div>
-            </div>
-        </div>
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                localStorage.setItem('theme', 'light');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
 
-        <!-- Navigation Arrows -->
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-    </div>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    <!-- Navigation Dots -->
-    <div class="dots-container">
-        <span class="dot active" onclick="jumpToSlide(0)"></span>
-        <span class="dot" onclick="jumpToSlide(1)"></span>
-        <span class="dot" onclick="jumpToSlide(2)"></span>
-        <span class="dot" onclick="jumpToSlide(3)"></span>
-        <!-- Add more dots as needed, one for each slide -->
-    </div>
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-    <!-- Audio Player -->
-    <div class="audio-player">
-        <audio id="background-music" loop>
-            <source src="music/your-music-file.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <button id="music-toggle" class="music-button" aria-label="Play or pause music">
-            <div class="music-icon play-icon"></div>
-        </button>
-        <div class="volume-control">
-            <input type="range" id="volume-slider" min="0" max="100" value="70">
-            <span class="volume-icon"></span>
-        </div>
-    </div>
-    <script src="script.js"></script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
 
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+    </script>
 </body>
 </html>
